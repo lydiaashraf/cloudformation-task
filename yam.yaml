@@ -21,7 +21,7 @@ Resources:
   PrivateSubnet:
     Type: "AWS::EC2::Subnet"
     Properties:
-      AvailabilityZone: "us-south-1a" 
+      AvailabilityZone: "us-south-1b" 
       VpcId: MyVPC
       CidrBlock: "192.168.70.1/24"
       MapPublicIpOnLaunch: false
