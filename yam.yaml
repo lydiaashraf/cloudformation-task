@@ -1,20 +1,5 @@
-
-Parameters:
-  VpcName:
-    Description: Name of VPC
-    Type: String
-  PublicSubName:
-    Description: Public Subnet
-    Type: String
-  PrivateSubName:
-    Description: Private Subnet
-    Type: String 
-  InstanceName:
-    Description: Instance Name
-    Type: String
-  SecGroupName:
-    Description: Sec Group Name
-    Type: String 
+AWSTemplateFormatVersion: 2010-09-09
+Description: Creates a VPC with public and private subnets
 Resources:
   MyVPC:
     Type: "AWS::EC2::VPC"
