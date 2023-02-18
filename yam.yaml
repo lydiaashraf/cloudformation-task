@@ -7,32 +7,32 @@ Resources:
       CidrBlock: "192.168.70.0/16"
       Tags:
         - Key: Name
-          Value: !Ref VpcName
+          Value: VpcName
   PublicSubnet:
     Type: "AWS::EC2::Subnet"
     Properties:
       AvailabilityZone: "us-south-1" 
-      VpcId: !Ref MyVPC
+      VpcId: MyVPC
       CidrBlock: "192.168.70.0/24"
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
-          Value: !Ref PublicSubName
+          Value: PublicSubName
   PrivateSubnet:
     Type: "AWS::EC2::Subnet"
     Properties:
       AvailabilityZone: "us-south-1" 
-      VpcId: !Ref MyVPC
+      VpcId: MyVPC
       CidrBlock: "192.168.70.1/24"
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
-          Value: !Ref PrivateSubName
+          Value: PrivateSubName
   LydiaSecurityGroup:
     Type: "AWS::EC2::SecurityGroup"
     Properties:
       GroupDescription: "SSH and HTTP access"
-      VpcId: !Ref MyVPC
+      VpcId: MyVPC
       SecurityGroupIngress:
         - IpProtocol: "tcp"
           FromPort: 22
@@ -49,6 +49,6 @@ Resources:
       ImageId: "ami-0615bfdc319d617b1"
       InstanceType: "t2.micro"
       KeyName: "ec2-lydia"
-      SubnetId: !Ref PublicSubnet
+      SubnetId: PublicSubnet
       SecurityGroupIds:
         - !Ref LydiaSecurityGroup:
